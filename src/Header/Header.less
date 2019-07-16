@@ -1,0 +1,39 @@
+@import "../Styles/CommonStyles.less";
+
+.header__header-wrapper {
+    height: 48px;
+    background-color: @white;
+    border-bottom: 1px solid @borderStandard;
+}
+
+.header__menu {
+    height: 48px;
+    cursor: pointer;
+    padding: 0 0.5em;
+    vertical-align: middle;
+    display: inline-flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    transition: background-color 0.1s ease, visibility 0s, opacity 0.3s ease;
+    &:hover {
+        background-color: @pacersGrey;
+        .header__menu-dropdown {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.header__menu-dropdown {
+    max-height: 280px;
+    background-color: @darkWhite;
+    border: 2px solid;
+    padding: 21px;
+    top: 42px;
+    position: absolute;
+    border-radius: 3px;
+    visibility: hidden;
+    opacity: 0;
+}
