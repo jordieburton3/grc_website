@@ -31,6 +31,7 @@
   border-radius: 3px;
   visibility: hidden;
   opacity: 0;
+  box-shadow: 0 0.8em 0.6em -0.4em rgba(0, 0, 0, 0.15), 0 13px 10px -6px rgba(0, 0, 0, 0.08);
 }
 .header__header-option {
   padding: 15px;
