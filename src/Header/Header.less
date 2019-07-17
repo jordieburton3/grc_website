@@ -18,7 +18,7 @@
     flex-direction: column;
     transition: background-color 0.1s ease, visibility 0s, opacity 0.3s ease;
     &:hover {
-        background-color: @pacersGrey;
+        background-color: @fogSkyBlue;
         .header__menu-dropdown {
             visibility: visible;
             opacity: 1;
@@ -30,10 +30,24 @@
     max-height: 280px;
     background-color: @darkWhite;
     border: 2px solid;
-    padding: 21px;
     top: 42px;
     position: absolute;
     border-radius: 3px;
     visibility: hidden;
     opacity: 0;
+}
+
+.header__header-option {
+    padding: 15px;
+    padding-bottom: 7.5px;
+    padding-top: 7.5px;
+    &:first-child {
+        padding-top: 15px;
+    }
+    &:last-child {
+        padding-bottom: 15px;
+    }
+    &:hover {
+        background-color: @pacersGrey;
+    }
 }

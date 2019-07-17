@@ -11,7 +11,7 @@ export const Menu: React.FunctionComponent<MenuProps> = (props) => {
     return (
         <div className="header__menu" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
             {label}
-            <MenuDropdown options={["testing 1", "testing 2"]}/>
+            <MenuDropdown options={["testing 1", "testing 2", "third option"]}/>
         </div>
     );
 };

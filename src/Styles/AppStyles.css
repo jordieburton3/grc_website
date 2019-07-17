@@ -16,7 +16,7 @@
   transition: background-color 0.1s ease, visibility 0s, opacity 0.3s ease;
 }
 .header__menu:hover {
-  background-color: #A4A7AA;
+  background-color: #d7eef9;
 }
 .header__menu:hover .header__menu-dropdown {
   visibility: visible;
@@ -26,10 +26,26 @@
   max-height: 280px;
   background-color: #FCFCFC;
   border: 2px solid;
-  padding: 21px;
   top: 42px;
   position: absolute;
   border-radius: 3px;
   visibility: hidden;
   opacity: 0;
+}
+.header__header-option {
+  padding: 15px;
+  padding-bottom: 7.5px;
+  padding-top: 7.5px;
+}
+.header__header-option:first-child {
+  padding-top: 15px;
+}
+.header__header-option:last-child {
+  padding-bottom: 15px;
+}
+.header__header-option:hover {
+  background-color: #A4A7AA;
+}
+body {
+  background-color: #F0F0F2;
 }
