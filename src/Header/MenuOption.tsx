@@ -1,7 +1,11 @@
 import React from 'react';
 
-export const MenuOption: React.FunctionComponent = (props) => (
+interface IMenuOptionProps {
+    menuOptionData: IMenuOption
+}
+
+export const MenuOption: React.FunctionComponent<IMenuOptionProps> = (props) => (
     <div className="header__header-option">
-        {props.children}
+        {props.menuOptionData.label}
     </div>
 )

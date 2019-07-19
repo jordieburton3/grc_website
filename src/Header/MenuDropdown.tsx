@@ -2,7 +2,7 @@ import React from 'react';
 import { MenuOption } from "./MenuOption";
 
 interface MenuDropdownProps {
-    options: string[]
+    options: IMenuOption[]
 }
 
 export const MenuDropdown: React.FunctionComponent<MenuDropdownProps> = (props) => {
@@ -10,7 +10,7 @@ export const MenuDropdown: React.FunctionComponent<MenuDropdownProps> = (props) 
     return (
         <div className="header__menu-dropdown">
             {options.map((o, i) => (
-                <MenuOption key={i}>{o}</MenuOption>
+                <MenuOption key={i} menuOptionData={o}/>
             ))}
         </div>
     );
