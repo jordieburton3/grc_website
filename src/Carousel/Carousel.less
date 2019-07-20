@@ -1,0 +1,15 @@
+.carousel__wrapper {
+    position: relative;
+    right: 50%;
+}
+
+.carousel__image {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    transition: visibility 0.4s, opacity 0.6s ease;
+    &.carousel__hidden-image {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

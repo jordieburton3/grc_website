@@ -32,6 +32,7 @@
   visibility: hidden;
   opacity: 0;
   box-shadow: 0 0.8em 0.6em -0.4em rgba(0, 0, 0, 0.15), 0 13px 10px -6px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
 }
 .header__header-option {
   padding: 15px;
@@ -45,7 +46,21 @@
   padding-bottom: 15px;
 }
 .header__header-option:hover {
-  background-color: #A4A7AA;
+  background-color: #dddedf;
+}
+.carousel__wrapper {
+  position: relative;
+  right: 50%;
+}
+.carousel__image {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  transition: visibility 0.4s, opacity 0.6s ease;
+}
+.carousel__image.carousel__hidden-image {
+  opacity: 0;
+  visibility: hidden;
 }
 body {
   background-color: #F0F0F2;

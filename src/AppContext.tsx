@@ -1,7 +1,7 @@
 import React from 'react';
 
-const dummyMenuOptionData: IMenuOption[] = [{ link: "/roster?gender=men", label: "Men's" }, { link: "/roster?gender=women", label: "Women's" }];
-const dummyMenuData: IMenu[] = [{ label: "Roster", options: dummyMenuOptionData }];
+const dummyMenuOptionData: IMenuOption[] = [{ link: "/roster?gender=men", label: "Men's roster" }, { link: "/roster?gender=women", label: "Women's roster" }, { link: "/staff", label: "The staff" }, { link: "/mission", label: "Our mission" }, { link: "/records", label: "Team records" }];
+const dummyMenuData: IMenu[] = [{ label: "About", options: dummyMenuOptionData }];
 
 interface IGrcAppContextProps {}
 
@@ -13,13 +13,7 @@ interface IAppContext {
     state: IGrcAppContextState
 }
 
-const defaultContext = {
-    state: {
-        menu: []
-    }
-}
-
-export const AppContext = React.createContext<IAppContext>(defaultContext);
+export const AppContext = React.createContext({} as IAppContext);
 
 export class GrcApp extends React.PureComponent<IGrcAppContextProps, IGrcAppContextState> {
     constructor(props: IGrcAppContextProps) {
