@@ -14,7 +14,7 @@ export const Carousel: React.FunctionComponent = () => {
     React.useEffect(() => {
         const timer = setInterval(() => {
           setImageToUse(imageToUseRef.current === images.length - 1 ? 0 : imageToUseRef.current + 1);
-        }, 2000);
+        }, 5000);
         return () => clearInterval(timer);
       }, []);
     React.useEffect(() => {

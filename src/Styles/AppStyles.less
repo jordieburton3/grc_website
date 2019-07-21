@@ -1,7 +1,39 @@
 @import "../Header/Header.less";
-@import "CommonStyles.less";
+@import "./CommonStyles.less";
 @import "../Carousel/Carousel.less";
+@import "../Footer/Footer.less";
+@import "../Icons/Icons.less";
 
 body {
     background-color: @veryLightGrey;
+}
+
+.main-page__intro-text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-page__mission-title {
+	font-family: proxima-nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+	line-height: 1.5em;
+	color: @purpleSoft;
+	padding: 30px;
+	padding-bottom: 50px;
+	border-bottom: 2px solid @night;
+	width: 30%;
+	margin: auto;
+	display: inline-table;
+}
+
+.main-page__mission-subtext {
+	font-family: proxima-nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+	line-height: 1.5em;
+	padding: 30px;
 }
