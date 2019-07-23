@@ -1,8 +1,9 @@
 import * as React from 'react';
 import $ from 'jquery';
-import "../Styles/AppStyles.css";
+import "../../Styles/AppStyles.css";
 import { AdditionalCarouselClasses } from '../Constants/Classes';
 
+// TODO: Get images from database or something similar.
 const images = ["http://www.grcrunning.com/uploads/5/6/0/9/5609246/elena-clarendonday2_orig.jpg", "http://www.grcrunning.com/uploads/5/6/0/9/5609246/gw-parkway-grc_orig.jpg"]
 
 export const Carousel: React.FunctionComponent = () => {

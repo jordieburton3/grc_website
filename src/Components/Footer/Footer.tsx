@@ -1,7 +1,9 @@
 import * as React from 'react';
-import "../Styles/AppStyles.css";
+import "../../Styles/AppStyles.css";
 import { InstagramIcon } from '../Icons/Instagram';
 import { EmailIcon } from '../Icons/Email';
+
+// TODO: Consider getting href and text for email from DB.
 
 export const Footer: React.FunctionComponent = () => {
     return (

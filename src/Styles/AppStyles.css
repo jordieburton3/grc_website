@@ -201,9 +201,6 @@
 .icon__email {
   margin-top: 25%;
 }
-body {
-  background-color: #F0F0F2;
-}
 .main-page__intro-text {
   display: flex;
   align-items: center;
@@ -230,4 +227,7 @@ body {
   text-transform: uppercase;
   line-height: 1.5em;
   padding: 30px;
+}
+body {
+  background-color: #F0F0F2;
 }

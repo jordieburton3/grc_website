@@ -1,7 +1,7 @@
 import * as React from 'react';
-import "../Styles/AppStyles.css";
+import "../../Styles/AppStyles.css";
 import { Menu } from './Menu';
-import { AppContext } from '../AppContext';
+import { AppContext } from '../../AppContext';
 
 interface IHeaderProps {
 	menus: IMenu[]
