@@ -6,7 +6,7 @@ import { AdditionalCarouselClasses } from '../Constants/Classes';
 // TODO: Get images from database or something similar.
 const images = ["http://www.grcrunning.com/uploads/5/6/0/9/5609246/elena-clarendonday2_orig.jpg", "http://www.grcrunning.com/uploads/5/6/0/9/5609246/gw-parkway-grc_orig.jpg"]
 
-export const Carousel: React.FunctionComponent = () => {
+export const ProfileCarousel: React.FunctionComponent = () => {
 	const [imageToUse, setImageToUse] = React.useState(0);
 	const [mediaStyles, setMediaHeight] = React.useState({});
 	const imageToUseRef = React.useRef(imageToUse);
@@ -20,25 +20,25 @@ export const Carousel: React.FunctionComponent = () => {
       }, []);
     React.useEffect(() => {
 		window.addEventListener("resize", () => {
-			const height = $(".carousel__image")[0].scrollHeight;
-			setMediaHeight({ ...mediaStylesRef, height: `${height + 48}px` });
+            const width = $(".profile-carousel__image")[0].scrollWidth;
+            console.log(width * .66);
+			setMediaHeight({ ...mediaStylesRef, height: `${width * .66}px` });
 		});
-	}, []); // might wanna add ,[] here to prevent constant resizing.
+    }, []); // might wanna add ,[] here to prevent constant resizing.
+    console.log(mediaStyles);
     return (
-        <div className="carousel__wrapper" style={mediaStyles}>
+        <div className="profile-carousel__wrapper" style={mediaStyles}>
 			{images.map((image, i) => 
-				<img 
-					onLoad={() => {
-						const height = $(".carousel__image")[0].scrollHeight;
-						setMediaHeight({ ...mediaStylesRef, height: `${height + 48}px` });
-					}} 
-					alt="" 
-					src={image} 
-					key={image} 
-					className={`carousel__image ${imageToUse === i ? "" : AdditionalCarouselClasses.HIDDEN}`}/>)
-			}
-			<div className="carousel__title">GEORGETOWN</div>
-			<div className="carousel__subtitle">RUNNING CLUB</div>
+                <img 
+                onLoad={() => {
+                    const width = $(".profile-carousel__image")[0].scrollWidth;
+		            setMediaHeight({ ...mediaStylesRef, height: `${width * .66}px` });
+                }}
+                alt="" 
+                src={image} 
+                key={image} 
+                className={`profile-carousel__image ${imageToUse === i ? "" : AdditionalCarouselClasses.HIDDEN}`}/>)
+                }
         </div>
     );
 }

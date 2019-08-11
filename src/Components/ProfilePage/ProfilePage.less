@@ -1,0 +1,176 @@
+@import "../../Styles/CommonStyles.less";
+
+.profile-page__wrapper {
+    position: relative;
+    top: 48px;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+    @media screen and (max-width: 1240px) {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+    @media screen and (max-width: 860px) {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.profile-page__content-wrapper {
+    background: @white;
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+    border: 1px solid @borderStandard;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.profile-page__athlete-title {
+    width: inherit;
+    text-align: center;
+    font-size: 27px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid @subtextColor;
+    border-top: 2px solid @subtextColor;
+    margin-bottom: 30px;
+}
+
+.profile-page__title {
+    flex: 1 0 auto;
+}
+
+.profile-carousel__wrapper {
+    position: relative;
+}
+
+.profile-carousel__image {
+    width: 95%;
+    max-width: 1146px;
+    height: inherit;
+    top: 18px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    right: 0;
+    transition: visibility 0.4s, opacity 0.6s ease;
+    @media screen and (max-width: 860px) {
+        top: 18px;
+    }
+    &.carousel__hidden-image {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+//rgba(85, 116, 249, .75)
+.profile-page__athlete-name {
+    position: relative;
+    background: rgba(85, 116, 249, .75);
+    text-transform: uppercase;
+    height: 96px;
+    font-family: proxima-nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 60px;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    line-height: 1.5em;
+    color: @white;
+    margin: -6rem 0 0 0;
+    text-align: left;
+    @media screen and (max-width: 860px) {
+        font-size: 1.25rem;
+        line-height: 3rem;
+        margin-top: -3rem;
+        height: 48px;
+    }
+    @media screen and (max-width: 539px) {
+        font-size: 1.5rem;
+        line-height: 1.4;
+        color: rgba(85, 116, 249);
+        margin: 0;
+        padding: 8px;
+        background-color: transparent !important;
+    }
+}
+
+.profile-page__athlete-profile-picture-wrapper {
+    padding: 8px;
+    position: relative;
+    float: left;
+    max-width: 20%;
+    height: auto;
+    z-index: 2;
+    background: @white;
+    border: 1px solid @borderStandard;
+    margin: -8rem 0 16px 16px;
+    margin-right: 25px;
+    @media screen and (max-width: 860px) {
+        margin-top: -16px;
+    }
+    @media screen and (max-width: 539px) {
+        margin: 8px 16px 8px 8px;
+        padding: 0;
+        border: none;
+        background: none;
+    }
+}
+
+.profile-page__athlete-profile-picture {
+    height: 100%;
+    width: 100%;
+}
+
+.profile-page__basic-info-wrapper {
+    background: @veryLightGrey;
+    @media screen and (max-width: 539px) {
+        padding-top: 2rem;
+    }
+}
+
+.profile-page__background-info-wrapper {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    flex: 1;
+    padding-left: 0;
+    padding-top: 0;
+    margin-top: 6rem;
+    @media screen and (max-width: 860px) {
+        margin-top: 3rem;
+    }
+    dd {
+        display: inline-block;
+        margin: inherit;
+    }
+}
+
+.profile-page__background-info {
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: 0px;
+    line-height: 1.5em;
+    flex: 0 33%;
+    padding: 12px;
+    border-bottom: 1px solid @fog;
+    padding-right: 0px;
+    margin-right: 12px;
+    @media screen and (max-width: 860px) {
+        flex: 0 50%;
+    }
+    .profile-page__background-info-title {
+        color: @purpleSoft;
+        font-family: proxima-nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+}

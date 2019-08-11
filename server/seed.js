@@ -1,6 +1,7 @@
 import Sqlite from "sqlite3"
 
 const DropQueries = [
+    `DROP TABLE IF EXISTS BioPage`,
 	`DROP TABLE IF EXISTS Members`,
     `DROP TABLE IF EXISTS Board`,
     `DROP TABLE IF EXISTS BlogPosts`,
@@ -12,7 +13,8 @@ const DropQueries = [
 
 const Schemas = [
     `CREATE TABLE Images (
-        id INTEGER NOT NULL,
+		id INTEGER NOT NULL,
+		imageName NOT NULL,
         imageUrl TEXT NOT NULL,
         PRIMARY KEY(id)
 	)`,
@@ -20,11 +22,20 @@ const Schemas = [
         id INTEGER NOT NULL,
         firstName TEXT NOT NULL,
         lastName TEXT NOT NULL,
-        email TEXT NOT NULL,
-        bio TEXT NOT NULL,
+        gender TEXT NOT NULL,
         imageId INTEGER NOT NULL,
         PRIMARY KEY(id),
         FOREIGN KEY(imageId) REFERENCES Images(id)
+    )`,
+    `CREATE TABLE BioPage (
+        id INTEGER NOT NULL,
+        imageId INTEGER NOT NULL,
+        email TEXT NOT NULL,
+        bio TEXT NOT NULL,
+        instagram TEXT,
+        twitter TEXT,
+        FOREIGN KEY(imageId) REFERENCES Images(id),
+        FOREIGN KEY (id) REFERENCES Members(id)
     )`,
     `CREATE TABLE Board (
         id INTEGER NOT NULL,
@@ -37,7 +48,8 @@ const Schemas = [
         id INTEGER NOT NULL,
         dateCreated INTEGER NOT NULL,
         imageId INTEGER NOT NULL,
-        author TEXT,
+		author TEXT,
+		clicks INTEGER NOT NULL DEFAULT 0,
         PRIMARY KEY(id),
         FOREIGN KEY(imageId) REFERENCES Images(id)
     )`,
@@ -85,8 +97,34 @@ const createTables = () => {
 			});
 		});
 	});
+}
+
+const InsertTestData = () => {
+	const s = "INSERT INTO Images (imageName, imageUrl) VALUES ('test', 'url')";
+    db.serialize(() => {
+		db.run(s, [], (e, r) => {
+			if (e) {
+				console.log(e);
+			}
+			console.log(r);
+		});
+	});
+}
+
+const selectTestData = () => {
+	const s = "SELECT * FROM Images";
+	db.serialize(() => {
+		db.all(s, [], (e, r) => {
+			if (e) {
+				console.log(e);
+			}
+			console.log(r);
+		});
+	});
 	db.close();
 }
 
 deleteTables();
 createTables();
+InsertTestData();
+selectTestData();

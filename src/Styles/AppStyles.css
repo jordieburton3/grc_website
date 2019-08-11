@@ -112,6 +112,9 @@
     font-size: 22px;
   }
 }
+.footer__wrapper {
+  margin-top: 48px;
+}
 .footer__upper {
   width: 100%;
   height: 121px;
@@ -202,7 +205,7 @@
   margin-top: 25%;
 }
 .main-page__intro-text {
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
 }
@@ -228,6 +231,261 @@
   line-height: 1.5em;
   padding: 30px;
 }
+.roster-page__wrapper {
+  top: 48px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+.roster-page__team-text {
+  text-align: left;
+  padding-bottom: 15px;
+  font-size: 30px;
+  padding-top: 30px;
+}
+.roster-page__meet-the-team {
+  width: inherit;
+  text-align: center;
+  font-size: 27px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #646f79;
+  border-top: 2px solid #646f79;
+  margin-bottom: 30px;
+}
+.roster-page__card-wrapper {
+  width: 300px;
+  height: 225px;
+  background: #FFFFFF;
+  border: 3px solid #646f79;
+  border-radius: 3px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.roster-page__card-wrapper:hover .roster-page__card-overlay {
+  opacity: 0.7;
+  visibility: visible;
+}
+.roster-page__card-wrapper:hover .roster-page__card-overlay-text {
+  opacity: 1;
+  visibility: visible;
+}
+.roster-page__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.roster-page__card-image {
+  height: inherit;
+  width: inherit;
+}
+.roster-page__card-overlay {
+  visibility: hidden;
+  opacity: 0;
+  height: inherit;
+  width: inherit;
+  background-color: #0D0D0D;
+  transition: visibility 0.2s, opacity 0.4s cubic-bezier(0.2, 0.19, 0.27, 0.98);
+  position: absolute;
+}
+.roster-page__card-overlay-text {
+  visibility: hidden;
+  opacity: 0;
+  color: #FFFFFF;
+  transition: visibility 0.2s, opacity 0.4s cubic-bezier(0.2, 0.19, 0.27, 0.98);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 600;
+  right: 0%;
+  height: inherit;
+  width: inherit;
+}
+.profile-page__wrapper {
+  position: relative;
+  top: 48px;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media screen and (max-width: 1240px) {
+  .profile-page__wrapper {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+@media screen and (max-width: 860px) {
+  .profile-page__wrapper {
+    margin: 0;
+    padding: 0;
+  }
+}
+.profile-page__content-wrapper {
+  background: #FFFFFF;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  border: 1px solid #CCCCCC;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+.profile-page__athlete-title {
+  width: inherit;
+  text-align: center;
+  font-size: 27px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #646f79;
+  border-top: 2px solid #646f79;
+  margin-bottom: 30px;
+}
+.profile-page__title {
+  flex: 1 0 auto;
+}
+.profile-carousel__wrapper {
+  position: relative;
+}
+.profile-carousel__image {
+  width: 95%;
+  max-width: 1146px;
+  height: inherit;
+  top: 18px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  right: 0;
+  transition: visibility 0.4s, opacity 0.6s ease;
+}
+@media screen and (max-width: 860px) {
+  .profile-carousel__image {
+    top: 18px;
+  }
+}
+.profile-carousel__image.carousel__hidden-image {
+  opacity: 0;
+  visibility: hidden;
+}
+.profile-page__athlete-name {
+  position: relative;
+  background: rgba(85, 116, 249, 0.75);
+  text-transform: uppercase;
+  height: 96px;
+  font-family: proxima-nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 60px;
+  letter-spacing: 0px;
+  text-transform: capitalize;
+  line-height: 1.5em;
+  color: #FFFFFF;
+  margin: -6rem 0 0 0;
+  text-align: left;
+}
+@media screen and (max-width: 860px) {
+  .profile-page__athlete-name {
+    font-size: 1.25rem;
+    line-height: 3rem;
+    margin-top: -3rem;
+    height: 48px;
+  }
+}
+@media screen and (max-width: 539px) {
+  .profile-page__athlete-name {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: rgba(85, 116, 249);
+    margin: 0;
+    padding: 8px;
+    background-color: transparent !important;
+  }
+}
+.profile-page__athlete-profile-picture-wrapper {
+  padding: 8px;
+  position: relative;
+  float: left;
+  max-width: 20%;
+  height: auto;
+  z-index: 2;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  margin: -8rem 0 16px 16px;
+  margin-right: 25px;
+}
+@media screen and (max-width: 860px) {
+  .profile-page__athlete-profile-picture-wrapper {
+    margin-top: -16px;
+  }
+}
+@media screen and (max-width: 539px) {
+  .profile-page__athlete-profile-picture-wrapper {
+    margin: 8px 16px 8px 8px;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+}
+.profile-page__athlete-profile-picture {
+  height: 100%;
+  width: 100%;
+}
+.profile-page__basic-info-wrapper {
+  background: #F0F0F2;
+}
+@media screen and (max-width: 539px) {
+  .profile-page__basic-info-wrapper {
+    padding-top: 2rem;
+  }
+}
+.profile-page__background-info-wrapper {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  flex: 1;
+  padding-left: 0;
+  padding-top: 0;
+  margin-top: 6rem;
+}
+@media screen and (max-width: 860px) {
+  .profile-page__background-info-wrapper {
+    margin-top: 3rem;
+  }
+}
+.profile-page__background-info-wrapper dd {
+  display: inline-block;
+  margin: inherit;
+}
+.profile-page__background-info {
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.5em;
+  flex: 0 33%;
+  padding: 12px;
+  border-bottom: 1px solid #dddedf;
+  padding-right: 0px;
+  margin-right: 12px;
+}
+@media screen and (max-width: 860px) {
+  .profile-page__background-info {
+    flex: 0 50%;
+  }
+}
+.profile-page__background-info .profile-page__background-info-title {
+  color: #5574F9;
+  font-family: proxima-nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+}
 body {
   background-color: #F0F0F2;
+  font-family: proxima-nova, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
