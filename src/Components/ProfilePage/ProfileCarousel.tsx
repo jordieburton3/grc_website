@@ -3,8 +3,8 @@ import $ from 'jquery';
 import "../../Styles/AppStyles.css";
 import { AdditionalCarouselClasses } from '../Constants/Classes';
 
-// TODO: Get images from database or something similar.
-const images = ["http://www.grcrunning.com/uploads/5/6/0/9/5609246/elena-clarendonday2_orig.jpg", "http://www.grcrunning.com/uploads/5/6/0/9/5609246/gw-parkway-grc_orig.jpg"]
+// TODO: Get images from database or something similar and pass as prop.
+const images = ["https://dbukjj6eu5tsf.cloudfront.net/sidearm.sites/gatorzone.com/images/2016/2/13/Florida_Raz_Invite_136.jpg", "https://dbukjj6eu5tsf.cloudfront.net/sidearm.sites/gatorzone.com/images/2017/5/31/Taylor_Tubbs_DL.jpg"]
 
 export const ProfileCarousel: React.FunctionComponent = () => {
 	const [imageToUse, setImageToUse] = React.useState(0);

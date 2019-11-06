@@ -1,6 +1,7 @@
 import React from 'react';
 import { createSelector } from "reselect";
 
+// TODO: Get these all from the database and possible add some sort of loading state.
 const dummyMenuOptionData: IMenuOption[] = [{ link: "/roster/men", label: "Men's roster" }, { link: "/roster/women", label: "Women's roster" }, { link: "/staff", label: "The staff" }, { link: "/mission", label: "Our mission" }, { link: "/records", label: "Team records" }];
 const dummyMenuData: IMenu[] = [{ label: "About", options: dummyMenuOptionData }];
 const dummyAthleteData: IRosterAthlete[] = [
@@ -11,7 +12,7 @@ const dummyAthleteData: IRosterAthlete[] = [
     { id: 4, firstName: "Jordan", lastName: "Burton", image: "http://www.grcrunning.com/uploads/5/6/0/9/5609246/published/jordan-10.png?1563288479", gender: "men" }
 ];
 const dummyAthleteMap: { [key: string]: IAthleteBio } = {};
-dummyAthleteData.forEach(a => dummyAthleteMap[`${a.id}`] = { id: a.id, firstName: a.firstName, lastName: a.lastName, bio: "This is a bio about the athlete with id", prList: ["800,1:50", "Mile,4:04.18"], image: a.image });
+dummyAthleteData.forEach(a => dummyAthleteMap[`${a.id}`] = { id: a.id, firstName: a.firstName, lastName: a.lastName, bio: "This is a bio about the athlete with id", prList: ["800,1:50", "Mile,4:04.18"], image: a.image, instagram: "taylortubbs", twitter: "jordyburton3", email: "jordieburton3@gmail.com" });
 
 interface IGrcAppContextProps {}
 

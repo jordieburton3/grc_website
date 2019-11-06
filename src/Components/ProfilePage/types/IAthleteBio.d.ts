@@ -7,5 +7,6 @@ interface IAthleteBio {
     image: string;
     instagram?: string;
     twitter?: string;
+    email?: string;
     gallery?: string[];
 }

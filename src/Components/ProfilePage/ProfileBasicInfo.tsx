@@ -1,5 +1,4 @@
 import * as React from 'react';
-import $ from 'jquery';
 import "../../Styles/AppStyles.css";
 
 const image = "https://floridagators.com/images/2016/9/1/TubbsTaylor_Headshot_160826_1725.jpg?width=300";
