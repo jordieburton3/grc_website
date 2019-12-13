@@ -2,13 +2,14 @@ import React from 'react';
 import "../../Styles/AppStyles.css";
 import { RosterCard } from './RosterCard';
 import { AppContext, getAthleteListForGender } from '../../AppContext';
+import { BoardPositions } from '../StaffPage/types/BoardMember';
 
 interface IConnectedRosterGridProps {
-    gender: string;
+	gender: string;
 }
 
 interface IRosterGridProps {
-    athleteList: IRosterAthlete[];
+	athleteList: IMemberInfo[];
 }
 
 const RosterGrid: React.FunctionComponent<IRosterGridProps> = (props) => {

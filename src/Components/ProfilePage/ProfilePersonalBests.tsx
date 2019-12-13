@@ -11,7 +11,7 @@ export const ProfilePersonalBests: React.FunctionComponent = () => {
                     PRs&nbsp;|&nbsp;
                 </span>
                 {prs.map(pr => (
-                    <div className="profile-page__personal-best">
+                    <div className="profile-page__personal-best" key={pr}>
                         <span className="profile-page__personal-best-event standard-bold-text">{pr.split("&")[0]}:&nbsp;</span>
                         <span className="profile-page__personal-best-event-time standard-text">{pr.split("&")[1]}</span>
                     </div>

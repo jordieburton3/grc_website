@@ -1,7 +1,6 @@
 import * as React from 'react';
 import "../../Styles/AppStyles.css";
 import { RouteComponentProps } from 'react-router';
-import { ProfileHeader } from './ProfileHeader';
 import { ProfileCarousel } from './ProfileCarousel';
 import { AppContext } from '../../AppContext';
 import { ProfileBasicInfo } from './ProfileBasicInfo';
@@ -48,6 +47,13 @@ const ProfilePage: React.FunctionComponent<IProfilePageProps> = (props) => {
 						<a className="profile-page__handle-wrapper" href={`https://twitter.com/${athleteBio.twitter}`}>
 							<TwitterIcon />
 							<span className="profile-page__social-media-text standard-text">@{athleteBio.twitter}</span>
+						</a>
+					}
+					{
+						athleteBio.email && 
+						<a className="profile-page__handle-wrapper" href={athleteBio.email}>
+							<EmailIcon />
+							<span className="profile-page__social-media-text standard-text">@{athleteBio.email}</span>
 						</a>
 					}
 				</div>

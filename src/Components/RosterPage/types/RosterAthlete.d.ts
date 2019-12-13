@@ -5,7 +5,7 @@
         bio TEXT NOT NULL,
 		imageId INTEGER NOT NULL,
         gender TEXT NOT NULL,*/ 
-interface IRosterAthlete {
+interface IMemberInfo {
     id: number;
     firstName: string;
     lastName: string;

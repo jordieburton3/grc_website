@@ -8,7 +8,7 @@ const images = ["https://dbukjj6eu5tsf.cloudfront.net/sidearm.sites/gatorzone.co
 
 export const ProfileCarousel: React.FunctionComponent = () => {
 	const [imageToUse, setImageToUse] = React.useState(0);
-	const [mediaStyles, setMediaHeight] = React.useState({});
+	const [mediaStyles, setMediaHeight] = React.useState({ });
 	const imageToUseRef = React.useRef(imageToUse);
 	const mediaStylesRef = React.useRef(mediaStyles);
     imageToUseRef.current = imageToUse;
@@ -21,23 +21,21 @@ export const ProfileCarousel: React.FunctionComponent = () => {
     React.useEffect(() => {
 		window.addEventListener("resize", () => {
             const width = $(".profile-carousel__image")[0].scrollWidth;
-            console.log(width * .66);
 			setMediaHeight({ ...mediaStylesRef, height: `${width * .66}px` });
 		});
-    }, []); // might wanna add ,[] here to prevent constant resizing.
-    console.log(mediaStyles);
+    }, []); 
     return (
         <div className="profile-carousel__wrapper" style={mediaStyles}>
 			{images.map((image, i) => 
                 <img 
-                onLoad={() => {
-                    const width = $(".profile-carousel__image")[0].scrollWidth;
-		            setMediaHeight({ ...mediaStylesRef, height: `${width * .66}px` });
-                }}
-                alt="" 
-                src={image} 
-                key={image} 
-                className={`profile-carousel__image ${imageToUse === i ? "" : AdditionalCarouselClasses.HIDDEN}`}/>)
+                    onLoad={() => {
+                        const width = $(".profile-carousel__image")[0].scrollWidth;
+                        setMediaHeight({ ...mediaStylesRef, height: `${width * .66}px` });
+                    }}
+                    alt="" 
+                    src={image} 
+                    key={image} 
+                    className={`profile-carousel__image ${imageToUse === i ? "" : AdditionalCarouselClasses.HIDDEN}`}/>)
                 }
         </div>
     );

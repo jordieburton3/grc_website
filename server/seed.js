@@ -1,4 +1,4 @@
-import Sqlite from "sqlite3"
+import Sqlite from "sqlite3";
 
 const DropQueries = [
     `DROP TABLE IF EXISTS BioPage`,
@@ -8,7 +8,8 @@ const DropQueries = [
     `DROP TABLE IF EXISTS Images`,
     `DROP TABLE IF EXISTS Schedule`,
     `DROP TABLE IF EXISTS PersonalRecords`,
-    `DROP TABLE IF EXISTS Users`
+    `DROP TABLE IF EXISTS Users`,
+    `DROP TABLE IF EXISTS ClubRecords`
 ]
 
 const Schemas = [
@@ -24,6 +25,7 @@ const Schemas = [
         lastName TEXT NOT NULL,
         gender TEXT NOT NULL,
         imageId INTEGER NOT NULL,
+        isAthlete INTEGER CHECK(isAthlete == 0 OR isAthlete == 1),
         PRIMARY KEY(id),
         FOREIGN KEY(imageId) REFERENCES Images(id)
     )`,
@@ -66,6 +68,14 @@ const Schemas = [
         time INTEGER NOT NULL,
         PRIMARY KEY(athleteId, event),
         FOREIGN KEY(athleteId) REFERENCES Members (id)
+    )`,
+    `CREATE TABLE ClubRecords (
+        athleteId INTEGER NOT NULL,
+        event TEXT NOT NULL,
+        time INTEGER NOT NULL,
+        yearSet INTEGER NOT NULL,
+        gender TEXT NOT NULL CHECK(gender == "men" OR gender == "women"),
+        PRIMARY KEY(athleteId, event)
     )`,
     `CREATE TABLE Users (
         email TEXT NOT NULL,
