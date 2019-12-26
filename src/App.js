@@ -9,7 +9,7 @@ import { MainPage } from './Components/MainPage/MainPage';
 import { RosterPage } from './Components/RosterPage/RosterPage';
 import { ConnectedProfilePage } from './Components/ProfilePage/ProfilePage';
 import { StaffPage } from './Components/StaffPage/StaffPage';
-import { RecordsPage } from './Components/Records/RecordsPage';
+import { ConnectedRecordsPage } from './Components/Records/RecordsPage';
 
 // http://www.grcrunning.com/uploads/5/6/0/9/5609246/elena-clarendonday2_orig.jpg
 // http://www.grcrunning.com/uploads/5/6/0/9/5609246/gw-parkway-grc_orig.jpg
@@ -17,17 +17,19 @@ import { RecordsPage } from './Components/Records/RecordsPage';
 function App() {
 	return (
 		<div className="App">
-			<GrcApp>
-				<ConnectedHeader />
-				<Router>
-					<Route exact path="/" component={MainPage}/>
-					<Route exact path="/roster/:gender" component={RosterPage}/>
-					<Route exact path="/profile/:id" component={ConnectedProfilePage} />
-					<Route exact path="/staff" component={StaffPage} />
-					<Route exact path="/records" component={RecordsPage} />
-				</Router>
-				<Footer />
-			</GrcApp>
+			<div className="main-content">
+				<GrcApp>
+					<ConnectedHeader />
+					<Router>
+						<Route exact path="/" component={MainPage}/>
+						<Route exact path="/roster/:gender" component={RosterPage}/>
+						<Route exact path="/profile/:id" component={ConnectedProfilePage} />
+						<Route exact path="/staff" component={StaffPage} />
+						<Route exact path="/records" component={ConnectedRecordsPage} />
+					</Router>
+				</GrcApp>
+			</div>
+			<Footer />
 		</div>
 	);
 }

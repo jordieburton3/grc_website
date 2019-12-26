@@ -75,6 +75,7 @@ const Schemas = [
         time INTEGER NOT NULL,
         yearSet INTEGER NOT NULL,
         gender TEXT NOT NULL CHECK(gender == "men" OR gender == "women"),
+        venue TEXT NOT NULL CHECK(venue == "road" OR venue == "indoor track" OR venue == "outdoor track"),
         PRIMARY KEY(athleteId, event)
     )`,
     `CREATE TABLE Users (

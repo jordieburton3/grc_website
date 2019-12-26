@@ -1,6 +1,8 @@
 import React from 'react';
 import { createSelector } from "reselect";
 import { IBoardMember, BoardPositions } from './Components/StaffPage/types/BoardMember';
+import { convertToMilliseconds } from './Utils/TimeConversionUtils';
+import { mapClubRecords } from './Utils/RecordsUtil';
 
 // TODO: Get these all from the database and possible add some sort of loading state.
 const dummyMenuOptionData: IMenuOption[] = [{ link: "/roster/men", label: "Men's roster" }, { link: "/roster/women", label: "Women's roster" }, { link: "/staff", label: "The staff" }, { link: "/records", label: "Team records" }];
@@ -17,6 +19,68 @@ dummyAthleteData.forEach(a => dummyAthleteMap[`${a.id}`] = { id: a.id, firstName
 const dummyBoardInfoList: IBoardMember[] = [{id: 5, position: BoardPositions.MensDirector}, { id: 2, position: BoardPositions.President }]
 const dummyBoardInfo: { [key: number]: BoardPositions } = {};
 dummyBoardInfoList.forEach(i => dummyBoardInfo[i.id] = i.position);
+const records: IClubRecord[] = [
+    {
+        athleteId: 1,
+        event: "800m",
+        time: convertToMilliseconds({ minutes: 2, seconds: 7.0,  }),
+        yearSet: 2018,
+        gender: "women",
+        venue: "indoor track"
+    },
+    {
+        athleteId: 2,
+        event: "5000m",
+        time: convertToMilliseconds({ minutes: 16, seconds: 4 }),
+        yearSet: 2017,
+        gender: "women",
+        venue: "indoor track"
+    },
+    {
+        athleteId: 2,
+        event: "10000m",
+        time: convertToMilliseconds({ minutes: 33, seconds: 30 }),
+        yearSet: 2015,
+        gender: "women",
+        venue: "outdoor track"
+    },
+    {
+        athleteId: 1,
+        event: "1 mile",
+        time: convertToMilliseconds({ minutes: 4, seconds: 47 }),
+        yearSet: 2019,
+        gender: "women",
+        venue: "indoor track"
+    },
+    {
+        athleteId: 5,
+        event: "1500m",
+        time: convertToMilliseconds({ minutes: 3, seconds: 46 }),
+        yearSet: 2018,
+        gender: "men",
+        venue: "outdoor track"
+    },
+    {
+        athleteId: 5,
+        event: "800m",
+        time: convertToMilliseconds({ minutes: 1, seconds: 50.32 }),
+        yearSet: 2018,
+        gender: "men",
+        venue: "outdoor track"
+    },
+    {
+        athleteId: 4,
+        event: "Marathon",
+        time: convertToMilliseconds({ hours: 2, minutes: 42, seconds: 1.00 }),
+        yearSet: 2013,
+        gender: "women",
+        venue: "road"
+    }
+];
+
+const recordMap = mapClubRecords(records);
+
+
 
 interface IGrcAppContextProps {}
 
@@ -25,6 +89,7 @@ interface IGrcAppContextState {
     athleteList: IMemberInfo[];
     athleteMap: { [key: string]: IAthleteBio };
     boardMemberMap: { [key: number]:  BoardPositions };
+    clubRecordsMap: { [key: string]: IClubRecord[] };
 }
 
 interface IAppContext {
@@ -40,7 +105,8 @@ export class GrcApp extends React.PureComponent<IGrcAppContextProps, IGrcAppCont
             menu: dummyMenuData,
             athleteList: dummyAthleteData,
             athleteMap: dummyAthleteMap,
-            boardMemberMap: dummyBoardInfo
+            boardMemberMap: dummyBoardInfo,
+            clubRecordsMap: recordMap
         }
     }
 

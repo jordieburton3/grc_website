@@ -3,17 +3,24 @@
     position: relative;
 }
 
-.records-page__header {
-    font-family: proxima-nova, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 30px;
-    font-weight: 700;
+.record-header__wrapper {
     text-transform: uppercase;
-	line-height: 1.5em;
-	color: @purpleSoft;
-	padding: 30px;
-	padding-bottom: 50px;
-	border-bottom: 2px solid @night;
-	width: 30%;
-	margin: auto;
-	display: inline-table;
+    
+    &.standard-bold-text {
+        font-size: 26px;
+    }
+}
+
+.record-header__key {
+    &.standard-text {
+        font-size: 14px;
+    }
+}
+
+.records-page_wrapper {
+    padding-bottom: 20px;
+}
+
+.record-section__athlete-link {
+    text-decoration: none;
 }
