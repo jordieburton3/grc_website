@@ -4,7 +4,7 @@ import { Menu } from './Menu';
 import { AppContext } from '../../AppContext';
 
 interface IHeaderProps {
-	menus: IMenu[]
+	menus: IMenuOption[]
 }
 
 const Header: React.FunctionComponent<IHeaderProps> = (props) => {

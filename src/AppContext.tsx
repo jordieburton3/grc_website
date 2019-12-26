@@ -85,7 +85,7 @@ const recordMap = mapClubRecords(records);
 interface IGrcAppContextProps {}
 
 interface IGrcAppContextState {
-    menu: IMenu[]
+    menu: IMenuOption[]
     athleteList: IMemberInfo[];
     athleteMap: { [key: string]: IAthleteBio };
     boardMemberMap: { [key: number]:  BoardPositions };
@@ -102,7 +102,7 @@ export class GrcApp extends React.PureComponent<IGrcAppContextProps, IGrcAppCont
     constructor(props: IGrcAppContextProps) {
         super(props);
         this.state = {
-            menu: dummyMenuData,
+            menu: dummyMenuOptionData,
             athleteList: dummyAthleteData,
             athleteMap: dummyAthleteMap,
             boardMemberMap: dummyBoardInfo,
