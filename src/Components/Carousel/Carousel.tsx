@@ -11,6 +11,10 @@ export const Carousel: React.FunctionComponent = () => {
 	const [mediaStyles, setMediaHeight] = React.useState({});
 	const imageToUseRef = React.useRef(imageToUse);
 	const mediaStylesRef = React.useRef(mediaStyles);
+	const resizeCarousel = () => {
+		const height = $(".carousel__image")[0].scrollHeight;
+		setMediaHeight({ ...mediaStylesRef, height: `${height + 48}px` });
+	};
     imageToUseRef.current = imageToUse;
     React.useEffect(() => {
         const timer = setInterval(() => {
@@ -19,10 +23,8 @@ export const Carousel: React.FunctionComponent = () => {
         return () => clearInterval(timer);
       }, []);
     React.useEffect(() => {
-		window.addEventListener("resize", () => {
-			const height = $(".carousel__image")[0].scrollHeight;
-			setMediaHeight({ ...mediaStylesRef, height: `${height + 48}px` });
-		});
+		window.addEventListener("resize", resizeCarousel);
+		return window.removeEventListener("resize", resizeCarousel);
 	}, []); // might wanna add ,[] here to prevent constant resizing.
     return (
         <div className="carousel__wrapper" style={mediaStyles}>

@@ -10,6 +10,7 @@ import { RosterPage } from './Components/RosterPage/RosterPage';
 import { ConnectedProfilePage } from './Components/ProfilePage/ProfilePage';
 import { StaffPage } from './Components/StaffPage/StaffPage';
 import { ConnectedRecordsPage } from './Components/Records/RecordsPage';
+import { BlogPage } from './Components/Blog/BlogPage';
 
 // http://www.grcrunning.com/uploads/5/6/0/9/5609246/elena-clarendonday2_orig.jpg
 // http://www.grcrunning.com/uploads/5/6/0/9/5609246/gw-parkway-grc_orig.jpg
@@ -26,6 +27,7 @@ function App() {
 						<Route exact path="/profile/:id" component={ConnectedProfilePage} />
 						<Route exact path="/staff" component={StaffPage} />
 						<Route exact path="/records" component={ConnectedRecordsPage} />
+						<Route exact path="/blog" component={BlogPage} />
 					</Router>
 				</GrcApp>
 			</div>

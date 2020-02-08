@@ -5,7 +5,7 @@ import { convertToMilliseconds } from './Utils/TimeConversionUtils';
 import { mapClubRecords } from './Utils/RecordsUtil';
 
 // TODO: Get these all from the database and possible add some sort of loading state.
-const dummyMenuOptionData: IMenuOption[] = [{ link: "/roster/men", label: "Men's roster" }, { link: "/roster/women", label: "Women's roster" }, { link: "/staff", label: "The staff" }, { link: "/records", label: "Team records" }];
+const dummyMenuOptionData: IMenuOption[] = [{ link: "/roster/men", label: "Men" }, { link: "/roster/women", label: "Women" }, { link: "/staff", label: "Staff" }, { link: "/records", label: "Records" }, { link: "/blog", label: "Blog" }];
 const dummyMenuData: IMenu[] = [{ label: "About", options: dummyMenuOptionData }];
 const dummyAthleteData: IMemberInfo[] = [
     { id: 1, firstName: "Gina", lastName: "McNamara", image: "http://www.grcrunning.com/uploads/5/6/0/9/5609246/published/18083892-10212902692826133-104163445-o.jpg?1516842187", gender: "women"},
