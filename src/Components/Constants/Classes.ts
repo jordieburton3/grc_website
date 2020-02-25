@@ -1,3 +1,3 @@
 export enum AdditionalCarouselClasses {
-    HIDDEN = "carousel__hidden-image"
+	HIDDEN = 'carousel__hidden-image'
 }

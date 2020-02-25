@@ -1,17 +1,17 @@
 import React from 'react';
-import { MenuOption } from "./MenuOption";
+import { MenuOption } from './MenuOption';
 
 interface MenuDropdownProps {
-    options: IMenuOption[]
+	options: IMenuOption[];
 }
 
-export const MenuDropdown: React.FunctionComponent<MenuDropdownProps> = (props) => {
-    const { options } = props;
-    return (
-        <div className="header__menu-dropdown">
-            {options.map((o, i) => (
-                <MenuOption key={i} menuOptionData={o}/>
-            ))}
-        </div>
-    );
+export const MenuDropdown: React.FunctionComponent<
+	MenuDropdownProps
+> = props => {
+	const { options } = props;
+	return (
+		<div className="header__menu-dropdown">
+			{options.map((o, i) => <MenuOption key={i} menuOptionData={o} />)}
+		</div>
+	);
 };

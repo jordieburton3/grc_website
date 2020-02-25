@@ -48,23 +48,25 @@
  */
 // TODO: Turn this into a selector
 export const mapClubRecords = (records: IClubRecord[]) => {
-    const clubRecordsMap: IClubRecordMap = {};
-    records.forEach(r => {
-        const key = `${r.gender}$${r.venue}`;
-        if (!clubRecordsMap[key]) {
-            clubRecordsMap[key] = [];
-        }
-        clubRecordsMap[key].push(r);
-    });
-    return clubRecordsMap;
-}
+	const clubRecordsMap: IClubRecordMap = {};
+	records.forEach(r => {
+		const key = `${r.gender}$${r.venue}`;
+		if (!clubRecordsMap[key]) {
+			clubRecordsMap[key] = [];
+		}
+		clubRecordsMap[key].push(r);
+	});
+	return clubRecordsMap;
+};
 
 export const getSortedRecordKeys = (keys: string[]) => {
-    const keysSorted = [...keys];
-    keysSorted.sort((a: string, b: string) => {
-        const aSplit = a.split("$");
-        const bSplit = b.split("$");
-        return aSplit[1].localeCompare(bSplit[1]) == 0 ? aSplit[0].localeCompare(bSplit[0]) : aSplit[1].localeCompare(bSplit[1]);
-    });
-    return keysSorted;
-}
+	const keysSorted = [...keys];
+	keysSorted.sort((a: string, b: string) => {
+		const aSplit = a.split('$');
+		const bSplit = b.split('$');
+		return aSplit[1].localeCompare(bSplit[1]) == 0
+			? aSplit[0].localeCompare(bSplit[0])
+			: aSplit[1].localeCompare(bSplit[1]);
+	});
+	return keysSorted;
+};

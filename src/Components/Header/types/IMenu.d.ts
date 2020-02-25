@@ -1,4 +1,4 @@
 interface IMenu {
-    label: string;
-    options: IMenuOption[];
+	label: string;
+	options: IMenuOption[];
 }
