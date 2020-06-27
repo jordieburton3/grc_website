@@ -31,8 +31,8 @@ export const Carousel: React.FunctionComponent = () => {
 	}, []);
 	React.useEffect(() => {
 		window.addEventListener('resize', resizeCarousel);
-		return window.removeEventListener('resize', resizeCarousel);
 	}, []); // might wanna add ,[] here to prevent constant resizing.
+	//console.log(mediaStyles);
 	return (
 		<div className="carousel__wrapper" style={mediaStyles}>
 			{images.map((image, i) => (

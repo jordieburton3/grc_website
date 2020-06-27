@@ -61,7 +61,7 @@ export const BlogPreview: React.FunctionComponent = () => {
 						<div>{Math.ceil(testBody.split(' ').length / 200)} min read</div>
 					</div>
 				</div>
-				<a href="" className="blog-page__post-preview-text-anchor">
+				<a href={`/blog/post/${2}`} className="blog-page__post-preview-text-anchor">
 					<div className="blog-page__post-preview-header standard-bold-text">
 						{testHeader}
 					</div>
